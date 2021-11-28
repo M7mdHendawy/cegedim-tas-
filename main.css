@@ -1,0 +1,203 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-attachment: fixed;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-family: sans-serif;
+  background-position: 0;
+  z-index: 55;
+  height: 100vh;
+}
+
+body::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/Clouds Background.png") repeat;
+  -webkit-animation: animate 30s linear infinite;
+          animation: animate 30s linear infinite;
+}
+
+@-webkit-keyframes animate {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@keyframes animate {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 43.75rem;
+  min-width: 37.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0rem 0rem;
+      grid-template-areas: "first . ." ". . second" "third . ." ". . fourth" "fifth . ." ". . sixth" "seventh . ." ". . eights";
+}
+
+.container::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 0.125rem;
+  background: #addaf8;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.first {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: first;
+}
+
+.second {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: second;
+}
+
+.third {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: third;
+}
+
+.fourth {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: fourth;
+}
+
+.fifth {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: fifth;
+}
+
+.sixth {
+  -ms-grid-row: 6;
+  -ms-grid-column: 3;
+  grid-area: sixth;
+}
+
+.seventh {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: seventh;
+}
+
+.eights {
+  -ms-grid-row: 8;
+  -ms-grid-column: 3;
+  grid-area: eights;
+}
+
+.card {
+  position: relative;
+  width: 11.25rem;
+  padding: 0.3125rem 0.625rem;
+  border: 0.0625rem solid #addaf8;
+  background: #fff;
+  height: 4.0625rem;
+}
+
+.card:nth-child(even) {
+  text-align: left;
+}
+
+.card:nth-child(even)::before {
+  position: absolute;
+  content: url("./assets/bullet.png");
+  top: 0.5rem;
+  left: -6.8125rem;
+  width: 3.125rem;
+  height: 0.125rem;
+}
+
+.card:nth-child(even)::after {
+  position: absolute;
+  content: url("./assets/bullet.png");
+  top: 0.5rem;
+  left: -0.625rem;
+  width: 3.125rem;
+  height: 0.125rem;
+}
+
+.card:nth-child(even) h5::before {
+  position: absolute;
+  content: "";
+  left: -60%;
+  top: 42%;
+  width: 52%;
+  height: 0.125rem;
+  background: #addaf8;
+}
+
+.card:nth-child(odd) {
+  text-align: right;
+}
+
+.card:nth-child(odd)::before {
+  position: absolute;
+  content: url("./assets/bullet.png");
+  top: 0.5rem;
+  right: -6.8125rem;
+  width: 3.125rem;
+  height: 0.125rem;
+}
+
+.card:nth-child(odd)::after {
+  position: absolute;
+  content: url("./assets/bullet.png");
+  top: 0.5rem;
+  right: -0.5rem;
+  width: 3.125rem;
+  height: 0.125rem;
+}
+
+.card:nth-child(odd) h5::before {
+  position: absolute;
+  content: "";
+  right: -60%;
+  top: 42%;
+  width: 52%;
+  height: 0.125rem;
+  background: #addaf8;
+}
+
+.card h5 {
+  color: #addaf8;
+  margin: 0.125rem 0;
+  position: relative;
+}
+
+.card a {
+  display: block;
+  color: #addaf8;
+  text-decoration: none;
+  margin-bottom: 0.125rem;
+}
+/*# sourceMappingURL=main.css.map */

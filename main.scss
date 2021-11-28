@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-attachment: fixed;
+    display: grid;
+    place-items: center;
+    font-family: sans-serif;
+    background-position: 0;
+    z-index: 55;
+    height: 100vh;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("./assets/Clouds\ Background.png") repeat;
+        animation: animate 30s linear infinite;
+    }
+}
+
+@keyframes animate {
+    from {
+        background-position-x: 0;
+    }
+
+    to {
+        background-position-x: 100%;
+    }
+}
+
+.container {
+    position: relative;
+    max-width: 43.75rem;
+    min-width: 37.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0rem 0rem;
+    grid-template-areas:
+        "first . ."
+        ". . second"
+        "third . ."
+        ". . fourth"
+        "fifth . ."
+        ". . sixth"
+        "seventh . ."
+        ". . eights";
+
+    &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 0.125rem;
+        background: #addaf8;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.first {
+    grid-area: first;
+}
+
+.second {
+    grid-area: second;
+}
+
+.third {
+    grid-area: third;
+}
+
+.fourth {
+    grid-area: fourth;
+}
+
+.fifth {
+    grid-area: fifth;
+}
+
+.sixth {
+    grid-area: sixth;
+}
+
+.seventh {
+    grid-area: seventh;
+}
+
+.eights {
+    grid-area: eights;
+}
+
+.card {
+    position: relative;
+    width: 11.25rem;
+    padding: 0.3125rem 0.625rem;
+    border: 0.0625rem solid #addaf8;
+    background: #fff;
+    height: 4.0625rem;
+
+    &:nth-child(even) {
+        text-align: left;
+
+        &::before {
+            position: absolute;
+            content: url("./assets/bullet.png");
+            top: 0.5rem;
+            left: -6.8125rem;
+            width: 3.125rem;
+            height: 0.125rem;
+        }
+
+        &::after {
+            position: absolute;
+            content: url("./assets/bullet.png");
+            top: 0.5rem;
+            left: -0.625rem;
+            width: 3.125rem;
+            height: 0.125rem;
+        }
+
+        h5 {
+            &::before {
+                position: absolute;
+                content: "";
+                left: -60%;
+                top: 42%;
+                width: 52%;
+                height: 0.125rem;
+                background: #addaf8;
+            }
+        }
+    }
+
+    &:nth-child(odd) {
+        text-align: right;
+
+        &::before {
+            position: absolute;
+            content: url("./assets/bullet.png");
+            top: 0.5rem;
+            right: -6.8125rem;
+            width: 3.125rem;
+            height: 0.125rem;
+        }
+
+        &::after {
+            position: absolute;
+            content: url("./assets/bullet.png");
+            top: 0.5rem;
+            right: -0.5rem;
+            width: 3.125rem;
+            height: 0.125rem;
+        }
+
+        h5 {
+            &::before {
+                position: absolute;
+                content: "";
+                right: -60%;
+                top: 42%;
+                width: 52%;
+                height: 0.125rem;
+                background: #addaf8;
+            }
+        }
+    }
+
+    h5 {
+        color: #addaf8;
+        margin: 0.125rem 0;
+        position: relative;
+    }
+
+    a {
+        display: block;
+        color: #addaf8;
+        text-decoration: none;
+        margin-bottom: 0.125rem;
+    }
+}
